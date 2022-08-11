@@ -1,0 +1,14 @@
+
+
+.menuderoulant
+{
+	list-style-type : none;
+	background-color: pink;
+}
+.sousmenu
+{
+	display : none;
+}
+nav > li:hover .sousmenu{
+display : block;
+}

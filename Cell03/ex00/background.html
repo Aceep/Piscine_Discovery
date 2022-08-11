@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="background.css" rel="stylesheet">
+</head>
+<body>
+    <button onclick="setbg()" id="bouton">
+        <p>Click me!</p>
+    </button>
+<script>
+
+    function setbg()
+    {
+        var MakingColor ='ABCDEF1230456789';
+        var FinalColor = '#';
+        for (var counter=0; counter<6; counter++)
+        {
+        FinalColor = FinalColor + MakingColor[Math.floor(Math.random()*16)];
+        }
+        document.body.style.backgroundColor=FinalColor;
+        var width = bouton.clientWidth;
+        bouton.style.width = (width + 10) +"px";
+    }
+
+</script>
+</body>
+</html>

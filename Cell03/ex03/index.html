@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<!-- <script type="text/javascript" src="tojo.js"></script> -->
+<head>
+	<style>
+		body
+		{
+			text-align: center;
+		}
+	</style>	
+</head>
+<body>
+    <h1>TODO List</h1>
+    <input type="submit" class="addButton" value="new">
+    <div id="ft_list">
+        
+    </div>
+
+
+<script type="text/javascript">
+
+var addButton = document.querySelector('.addButton');
+const newdiv = document.createElement("div");
+var i =0;
+var list = [];
+
+
+function addItem(){
+
+            var saisie = prompt("Add a new item :");
+            console.log(saisie);
+            
+            if (saisie.lenght > 0);
+            {
+                i ++;
+                addListItem(i, saisie);
+        }
+        function addListItem (id,saisie)
+        {
+             list = '<div id=\"'+id+'\"onclick = "Delete(\''+id+'\')\">'+saisie+'</div>' + list;
+            document.getElementById("ft_list").innerHTML = list ;
+            console.log(list)
+           
+        }
+       
+
+}
+function Delete(id)
+{
+ 
+ if (confirm("Confirmer suppression ?"))
+ {
+ document.getElementById(id).remove();
+ setCookie();
+}}
+
+function setCookie()
+{
+    document.getEle
+}
+
+ft_list.addEventListener('click', Delete);
+addButton.addEventListener('click', addItem);
+window.addEventListener('keydown', (e)=>{
+    if(e.which == 13){
+        check();
+    }
+});
+</script>
+</body>
+</html>

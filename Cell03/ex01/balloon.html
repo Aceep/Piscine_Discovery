@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		div
+		{
+			display: table;
+			margin: 0 auto;
+			width: 200px;
+			height: 200px;
+			
+		}
+		button
+		{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background-color: red;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div><button onclick="Up()" onmouseleave="Out()" id="button"><span id="width"></span></button></div>
+	
+	<script>
+		
+		var click = 0;
+		var explose = 0;
+		/*var width = 200;
+		var height = 200;*/
+		function Up()
+		{
+			var width = button.clientWidth;
+			var height = button.clientHeight;
+			width = width + 10;
+			height = height + 10;
+			button.style.width = width + "px";
+			button.style.height = height +"px";
+			click ++;
+			explose ++;
+			if (click == 1)
+			{
+			button.style.backgroundColor="green";
+			}
+			else if (click == 2)
+			{
+			button.style.backgroundColor="blue";
+			}
+			else
+			{
+			button.style.backgroundColor="red";
+			click = 0;
+			}
+			if (explose == 22)
+			{
+				button.style.width = 200+"px";
+				button.style.height = 200+"px";
+				explose = 0;
+			}
+			
+			return click, explose, width, height ;
+			
+		}
+		function Out()
+		{
+			var width = button.clientWidth;
+			var height = button.clientHeight;
+			if (width > 200)
+			{
+				width = width - 5;
+				height = height - 5;
+				button.style.width = width + "px";
+				button.style.height = height +"px";
+				if (click == 0)
+			{
+				button.style.backgroundColor = "blue";
+				click = 3;
+			}
+			else if (click == 2)
+			{
+				button.style.backgroundColor = "green";
+			}
+			else
+			{
+				button.style.backgroundColor = "red";
+			}
+			click --;
+			}
+			return width, height;
+		}
+	</script>
+</body>
+</html>
